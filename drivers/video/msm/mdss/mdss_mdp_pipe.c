@@ -79,6 +79,8 @@ static int mdss_mdp_smp_reserve(struct mdss_mdp_pipe *pipe)
 	u32 num_blks = 0, reserved = 0;
 	int i;
 
+	force_alloc = pipe->flags & MDP_SMP_FORCE_ALLOC;
+
 	if ((pipe->src_planes.num_planes > 1) &&
 	    (pipe->type == MDSS_MDP_PIPE_TYPE_RGB))
 		return -EINVAL;
